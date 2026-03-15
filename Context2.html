@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDC Uganda Motor Pool - Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --bg-deep: #052e16; /* Rich Deep Green */
+            --bg-card: rgba(20, 83, 45, 0.4); 
+            --accent-mint: #4ade80;
+            --accent-amber: #fbbf24;
+            --text-main: #f0fdf4;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-deep);
+            color: var(--text-main); 
+            overflow: hidden; 
+        }
+
+        .slide-container { 
+            display: none; 
+            min-height: 100vh; 
+            padding: 2rem; 
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide-container.active { 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .gradient-text { 
+            background: linear-gradient(135deg, var(--accent-mint), #86efac, var(--accent-amber)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        .card { 
+            background: var(--bg-card); 
+            border: 1px solid rgba(74, 222, 128, 0.2); 
+            border-radius: 1.5rem; 
+            backdrop-filter: blur(16px); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-amber);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .layer-badge { 
+            padding: 0.5rem 1.25rem; 
+            border-radius: 8px; 
+            font-size: 0.7rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            margin-bottom: 1.5rem; 
+            display: inline-block;
+            letter-spacing: 0.15em;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .badge-exec { background: var(--accent-amber); color: #052e16; }
+        .badge-arch { background: #166534; color: var(--accent-mint); border-color: var(--accent-mint); }
+        .badge-eng { background: #fef3c7; color: #92400e; }
+
+        .nav-btn { 
+            background: rgba(20, 83, 45, 0.9); 
+            border: 1px solid var(--accent-mint); 
+            color: var(--accent-mint); 
+            width: 56px;
+            height: 56px;
+            border-radius: 16px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s; 
+            cursor: pointer; 
+        }
+
+        .nav-btn:hover { 
+            background: var(--accent-mint); 
+            color: var(--bg-deep);
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        pre { 
+            background: #020617; 
+            padding: 1.5rem; 
+            border-radius: 1rem; 
+            color: var(--accent-mint); 
+            font-family: 'Fira Code', monospace;
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            font-size: 0.85rem;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .mermaid-container { 
+            background: #ffffff; 
+            padding: 3rem; 
+            border-radius: 2rem; 
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8); 
+            margin: 0 auto; 
+            width: 90vw;
+            max-width: 1000px;
+        }
+
+        .counter {
+            font-size: 0.75rem;
+            color: var(--accent-mint);
+            font-weight: 600;
+            background: rgba(0,0,0,0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 99px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: TITLE -->
+    <div id="slide-1" class="slide-container active">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="layer-badge badge-exec">2022 Mission Honor Award Winner</span>
+            <h1 class="text-8xl font-black mb-6 tracking-tighter">
+                MOBILITY <br/>
+                <span class="gradient-text">FOR MISSIONS</span>
+            </h1>
+            <p class="text-2xl text-emerald-200 mb-12 font-light tracking-wide">CDC Uganda: Outbreak Response Logistics & Data Mart</p>
+            
+            <div class="flex justify-center gap-8">
+                <div class="card p-8 w-72">
+                    <i class="fas fa-microscope text-4xl text-amber-400 mb-4"></i>
+                    <p class="text-xs text-emerald-400 uppercase font-bold tracking-widest mb-1">Impact</p>
+                    <p class="text-lg font-bold text-white leading-tight">Emergency Outbreak Agility</p>
+                </div>
+                <div class="card p-8 w-72">
+                    <i class="fas fa-globe-africa text-4xl text-emerald-400 mb-4"></i>
+                    <p class="text-xs text-emerald-400 uppercase font-bold tracking-widest mb-1">Scale</p>
+                    <p class="text-lg font-bold text-white leading-tight">1,500+ Global Users</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: BUSINESS CONTEXT -->
+    <div id="slide-2" class="slide-container">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="text-left">
+                <span class="layer-badge badge-exec">Problem Space</span>
+                <h2 class="text-5xl font-extrabold mb-8 text-white">The Logistics <br/><span class="text-amber-400 italic font-light text-4xl">Bottleneck</span></h2>
+                <div class="space-y-8">
+                    <div class="flex gap-5">
+                        <div class="h-12 w-12 shrink-0 bg-red-500/20 rounded-full flex items-center justify-center text-red-400">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <p class="text-xl text-emerald-100">Manual radio coordination and paper logs prevented real-time vehicle allocation.</p>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="h-12 w-12 shrink-0 bg-amber-500/20 rounded-full flex items-center justify-center text-amber-400">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <p class="text-xl text-emerald-100">No audit trail for fuel utilization or vehicle maintenance schedules.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-12 relative">
+                <div class="absolute -top-6 -right-6 h-20 w-20 bg-amber-400 rounded-2xl flex items-center justify-center shadow-xl rotate-12">
+                    <i class="fas fa-triangle-exclamation text-3xl text-green-900"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-6 text-amber-400">Mission Risk</h3>
+                <p class="text-2xl text-emerald-50 font-light leading-relaxed">
+                    "Delays in vehicle dispatch meant delays in getting epidemiologists to the field during the first critical hours of an outbreak."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: STRATEGIC PHILOSOPHY -->
+    <div id="slide-3" class="slide-container">
+        <div class="max-w-5xl mx-auto w-full">
+            <div class="text-center mb-16">
+                <span class="layer-badge badge-exec">Architectural Decision</span>
+                <h2 class="text-5xl font-bold text-white">Output-Led Engineering</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card p-10 border-l-8 border-emerald-500">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-400">Deferred Implementation</h3>
+                    <p class="text-lg text-emerald-100">We waited until HR, Procurement, and Travel modules were stable. Logistics is an <strong>effect</strong>, not a cause.</p>
+                </div>
+                <div class="card p-10 border-l-8 border-amber-500">
+                    <h3 class="text-2xl font-bold mb-4 text-amber-400">Clean Dimensions</h3>
+                    <p class="text-lg text-emerald-100">Using verified Driver entities (HR) and Vehicle assets (Procurement) ensured the Logistics Data Mart had zero "garbage-in."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: BEFORE & AFTER -->
+    <div id="slide-4" class="slide-container">
+        <div class="w-full text-center">
+            <span class="layer-badge badge-arch">Ecosystem Evolution</span>
+            <h2 class="text-4xl font-bold mb-10 text-white">Integrated Logistics Pipeline</h2>
+            
+            <div class="mermaid-container mb-10">
+                <div class="mermaid">
+                    graph LR
+                    subgraph Input[Operational Layer]
+                        App[OBMS Mobile App] -- Requests --> SQL[(SQL Server)]
+                    end
+                    subgraph Process[Analytical Layer]
+                        SQL -- ETL/dbt --> Mart[Logistics Data Mart]
+                    end
+                    subgraph Output[Impact Layer]
+                        Mart -- Direct Query --> BI[Power BI Executive Dash]
+                        Mart -- Audit --> Fin[Fuel Compliance Logs]
+                    end
+                    style Input fill:#f0fdf4,stroke:#166534
+                    style SQL fill:#4ade80,color:#052e16
+                    style Mart fill:#fbbf24,color:#052e16
+                    style BI fill:#166534,color:#fff
+                </div>
+            </div>
+            <p class="text-emerald-400 font-bold uppercase tracking-widest text-sm">Decoupling Transactional Load from Analytical Performance</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: STAR SCHEMA -->
+    <div id="slide-5" class="slide-container">
+        <div class="max-w-6xl mx-auto w-full text-center">
+            <span class="layer-badge badge-arch">The Grains of Data</span>
+            <h2 class="text-4xl font-bold mb-10">The Logistics Star Schema</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    classDiagram
+                    direction RL
+                    class Fact_Transport {
+                        +Distance_KM
+                        +Fuel_Consumed
+                        +Wait_Time_Minutes
+                        +Mission_Status
+                    }
+                    class Dim_Vehicle {
+                        +Asset_Tag
+                        +Fuel_Efficiency_Target
+                        +Maintenance_Cycle
+                    }
+                    class Dim_Driver {
+                        +Certification_Level
+                        +Assigned_Region
+                    }
+                    class Dim_MissionType {
+                        +Priority_Score
+                        +Emergency_Flag
+                    }
+                    Fact_Transport --> Dim_Vehicle
+                    Fact_Transport --> Dim_Driver
+                    Fact_Transport --> Dim_MissionType
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: QUALITY CIRCUIT BREAKER -->
+    <div id="slide-6" class="slide-container">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="layer-badge badge-arch">Data Observability</span>
+            <h2 class="text-5xl font-black mb-12 text-white">The Fuel <br/><span class="text-amber-400 uppercase">Circuit Breaker</span></h2>
+            <div class="card p-12 border-2 border-dashed border-emerald-500/40">
+                <div class="grid grid-cols-2 gap-8 text-center">
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-emerald-400 mb-2">Monitor</p>
+                        <p class="text-lg font-bold">Fuel Receipts vs. GPS Logs</p>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-amber-400 mb-2">Threshold</p>
+                        <p class="text-lg font-bold">>20% Variance Flag</p>
+                    </div>
+                </div>
+                <div class="mt-10 pt-10 border-t border-emerald-500/20">
+                    <p class="text-xl text-emerald-100 font-light italic">"Automated cross-validation stops fraudulent or erroneous data from corrupting the gold layer before executives see the reports."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: PERFORMANCE -->
+    <div id="slide-7" class="slide-container">
+        <div class="max-w-5xl mx-auto w-full">
+            <span class="layer-badge badge-eng">Performance Engineering</span>
+            <h2 class="text-5xl font-bold mb-12 text-amber-400">Latency Optimization</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="card p-8 bg-black/40">
+                    <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3">
+                        <i class="fas fa-stopwatch text-emerald-400"></i> Logic Porting
+                    </h3>
+                    <p class="text-emerald-100 mb-6">Prototyped <strong>Route Optimization</strong> logic in Snowflake (Sandbox) using Window Functions, then ported to T-SQL for Production Compliance.</p>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-xs uppercase text-emerald-500">Before</p>
+                            <p class="text-3xl font-bold text-red-400">45 Min</p>
+                        </div>
+                        <i class="fas fa-arrow-right text-emerald-700"></i>
+                        <div class="text-right">
+                            <p class="text-xs uppercase text-emerald-500">After</p>
+                            <p class="text-3xl font-bold text-emerald-400">3 Min</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="card p-6 border-l-4 border-emerald-500">
+                        <p class="text-emerald-400 font-bold mb-1">Window Functions</p>
+                        <p class="text-sm text-emerald-100">Calculated "Time-between-Missions" to find idle bottlenecks.</p>
+                    </div>
+                    <div class="card p-6 border-l-4 border-amber-500">
+                        <p class="text-amber-400 font-bold mb-1">Incremental Loading</p>
+                        <p class="text-sm text-emerald-100">Reduces server load during high-traffic outbreak reporting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: CODE SNIPPET -->
+    <div id="slide-8" class="slide-container">
+        <div class="max-w-5xl mx-auto w-full">
+            <span class="layer-badge badge-eng">The Engineering Layer</span>
+            <h2 class="text-4xl font-bold mb-8 text-white">Idempotent Sync Pattern</h2>
+            <pre>
+-- ENSURING DATA CONSISTENCY ACROSS OFFLINE SYNC
+MERGE Logistics.Fact_Transport AS Target
+USING Staging.Mobile_Upload AS Source
+ON Target.Sync_Hash = Source.Sync_Hash
+WHEN MATCHED AND Source.Last_Updated > Target.Last_Updated THEN
+    UPDATE SET 
+        Target.Distance_KM = Source.Distance_KM,
+        Target.Fuel_Used = Source.Fuel_Used,
+        Target.Status = 'VERIFIED'
+WHEN NOT MATCHED THEN
+    INSERT (Sync_Hash, Vehicle_ID, Driver_ID, Distance_KM)
+    VALUES (Source.Sync_Hash, Source.Vehicle_ID, Source.Driver_ID, Source.Distance_KM);
+            </pre>
+            <p class="mt-6 text-emerald-500 font-bold italic text-center">Prevents duplicate records from intermittent field connectivity syncs.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: CLOSING -->
+    <div id="slide-9" class="slide-container">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block p-6 rounded-3xl bg-emerald-500/10 mb-8">
+                <i class="fas fa-truck-ramp-box text-8xl text-emerald-400"></i>
+            </div>
+            <h2 class="text-7xl font-black mb-6 text-white leading-tight">MISSION <br/><span class="text-amber-400">VERIFIED</span></h2>
+            <p class="text-2xl text-emerald-100 mb-12 font-light">Efficient Logistics. Faster Response. Saved Lives.</p>
+            <button onclick="changeSlide(1)" class="px-10 py-4 bg-amber-400 hover:bg-amber-300 text-green-950 rounded-2xl font-extrabold transition-all transform hover:scale-105 shadow-2xl">
+                RESTART CASE STUDY
+            </button>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="fixed bottom-10 right-10 flex flex-col items-end gap-5">
+        <div id="counter" class="counter">01 / 09</div>
+        <div class="flex gap-3">
+            <button onclick="changeSlide(-1)" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="changeSlide(1)" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // Mermaid Configuration
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: "base",
+            themeVariables: {
+                primaryColor: "#4ade80",
+                primaryTextColor: "#052e16",
+                primaryBorderColor: "#166534",
+                lineColor: "#166534",
+                secondaryColor: "#fbbf24",
+                tertiaryColor: "#f0fdf4"
+            },
+            flowchart: { curve: 'stepBefore' }
+        });
+
+        let currentIdx = 1;
+        const totalSlides = 9;
+        let renderedSlides = new Set();
+
+        function changeSlide(dir) {
+            document.getElementById(`slide-${currentIdx}`).classList.remove('active');
+            
+            currentIdx += dir;
+            if (currentIdx > totalSlides) currentIdx = 1;
+            if (currentIdx < 1) currentIdx = totalSlides;
+            
+            const nextSlide = document.getElementById(`slide-${currentIdx}`);
+            nextSlide.classList.add('active');
+            
+            document.getElementById('counter').innerText = `${String(currentIdx).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+            
+            if (nextSlide.querySelector('.mermaid') && !renderedSlides.has(currentIdx)) {
+                setTimeout(() => {
+                    mermaid.init(undefined, nextSlide.querySelectorAll('.mermaid'));
+                    renderedSlides.add(currentIdx);
+                }, 50);
+            }
+        }
+
+        // Arrow Key Support
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowRight" || e.key === " ") changeSlide(1);
+            if (e.key === "ArrowLeft") changeSlide(-1);
+        });
+
+        window.onload = () => {
+             const activeSlide = document.querySelector('.slide-container.active');
+             if (activeSlide.querySelector('.mermaid')) {
+                 mermaid.init(undefined, activeSlide.querySelectorAll('.mermaid'));
+                 renderedSlides.add(currentIdx);
+             }
+        };
+    </script>
+</body>
+</html>
